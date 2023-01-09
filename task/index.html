@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log-In</title>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src=" https://kit.fontawesome.com/24c494a6b6.js"
+    crossorigin="anonymous"></script>
+<style>
+* {
+  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    
+    background-image: url("https://www.meme-arsenal.com/memes/c88502e69c38c222076d63ded54037a1.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    
+}
+
+form {
+    padding: 10px 20px;
+}
+
+form h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 15px;
+
+}
+
+.form-field {
+    margin-bottom: 30px;
+
+}
+
+.form-field label {
+    display: block;
+    color: rgb(34, 33, 33);
+    margin-bottom: 10px;
+}
+
+.form-field input {
+    border: solid 2px #f0f0f0;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+}
+
+
+
+/* button */
+.btn {
+    width: 100%;
+    padding: 3%;
+    background: #007bff;
+    border-bottom: 2px solid #007bff;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #fff;
+    text-transform: uppercase;
+   
+
+}
+
+.btn:hover {
+    background: #0069d9;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+
+#hide1{
+    display:none;
+    
+}
+</style>
+</head>
+
+<body>
+    <div class="container">
+   
+  <!-- form start       -->
+ <form >
+      <h1>Log In</h1>
+
+             <div class="form-field">
+                <label for="Email">Email:</label>
+                <input type="text" name="email" id="email" autocomplete="off" placeholder="Enter your email">
+                <small></small>
+            </div>
+            
+            <div class="form-field">
+                <label for="password">Password:</label>
+               
+            <input type="password" name="password" id="password" autocomplete="off" placeholder="Enter your password" >
+                  
+                <span  onclick=" myFunction()" style="margin-left:300px; position:absolute; margin-top:-35px; cursor: pointer;" >
+                            <i id="hide1" class="fa fa-eye" ></i>
+                            <i id="hide2" class="fa fa-eye-slash"></i>
+                           </span>
+                   
+                    
+                <small></small>
+
+                <div class="form-field">
+                    <label for="otp">OTP:</label>
+                    <input name="otp" id="otp" disabled type="number" autocomplete="off" placeholder="Enter your otp">
+                    <small></small>
+                </div>
+
+            </div>
+
+          <div class="form-field">
+            
+                <input type="submit" value="submit" onclick="btn()" class="btn" style="border-radius:10px;">
+                <p class="text-muted">
+                    <a href="#" class="text-reset" style="cursor: pointer; color: #007bff;text-decoration:none; margin-left:110px; font-size:13px;">FORGET PASSWORD</a>
+                  </p>
+                  
+            </div>
+     
+            <a href="signup.html" class="btn" style="text-decoration:none; margin-left:70px; background-color:#28a745; border:none;" >Create New Account</a>
+        </form>
+
+<!-- form end -->
+
+    </div>
+
+</body>
+</html>
+
+<script src="index.js"></script>
+
+<script>
+
+function myFunction(){
+        var x= document.getElementById("password")
+      
+        var y= document.getElementById("hide1")
+        var z= document.getElementById("hide2")
+
+        if(x.type === "password"){
+          x.type = "text";
+          y.style.display= "block";
+          z.style.display= "none";
+        }
+        else{
+          x.type = "password";
+          y.style.display= "none";
+          z.style.display= "block";
+        }
+    }
+   
+    function btn(){
+    const email = document.querySelector("#email");
+    const pass = document.querySelector("#password");
+    const otp = document.querySelector("#otp");
+
+    if(email.value == "" || pass.value == "" || otp.value == ''){
+          alert("please enter your information")
+    }
+    else{
+        alert("successful")
+        window.location.href="men.html";
+    }
+}
+        
+</script>
